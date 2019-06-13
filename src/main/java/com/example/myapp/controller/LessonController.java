@@ -54,7 +54,7 @@ public class LessonController {
 	    }
 	  
 	    @PostMapping("api/module/{mid}/lesson")
-		public Lesson createLesson(@PathVariable("mid") Integer id, @RequestBody Lesson lesson) {
+		public List<Lesson> createLesson(@PathVariable("mid") Integer id, @RequestBody Lesson lesson) {
 			return ls.createLesson(id, lesson);
 		}
 		
