@@ -62,7 +62,7 @@ public class Topic {
 			lesson.getIncludedTopics().add(this);
 		}}
 
-	@OneToMany(mappedBy="topic")
+	@OneToMany(mappedBy="topic" , orphanRemoval=true)
 	private List<Widget> includedWidgets;
 
 	public List<Widget> getIncludedWidgets() {

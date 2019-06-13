@@ -49,6 +49,7 @@ public class Course {
 		  if(!author.getAuthoredCourses().contains(this)) {
 		     author.getAuthoredCourses().add(this);
 		}}
+	
 	@OneToMany(mappedBy="course" , orphanRemoval=true)
 	private List<Module> includedmodules;
 	

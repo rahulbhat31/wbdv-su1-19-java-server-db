@@ -59,7 +59,7 @@ public class Lesson {
 			module.getIncludedLessons().add(this);
 		}}
 
-	@OneToMany(mappedBy="lesson")
+	@OneToMany(mappedBy="lesson" , orphanRemoval=true)
 	private List<Topic> includedTopics;
 
 	public List<Topic> getIncludedTopics() {
