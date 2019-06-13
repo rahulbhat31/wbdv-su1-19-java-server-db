@@ -67,7 +67,7 @@ public class LessonService {
 	    }
 	     
 //	    @PostMapping("api/module/{mid}/lesson")
-		public Lesson createLesson(@PathVariable("mid") Integer id, @RequestBody Lesson lesson) {
+		public List<Lesson> createLesson(@PathVariable("mid") Integer id, @RequestBody Lesson lesson) {
 			if(lesson.getTitle().equals("")) {
 				lesson.setTitle("New Lesson");
 			}
@@ -77,7 +77,7 @@ public class LessonService {
 				
 				moduleService.setLesson(module.getId(), lesson.getId());
 				moduleService.updateModule(module.getId(),module);
-				return lesson;
+				return module.getIncludedLessons();
 			}
 			return null;
 		}
